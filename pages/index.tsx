@@ -1,13 +1,9 @@
-import Head from "next/head";
+import GradientLayout from "../components/gradientLayout";
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Spotify Clone KSF</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1>Home</h1>
-    </div>
+    <GradientLayout color="blue">
+      <div>Home</div>
+    </GradientLayout>
   );
 }
