@@ -31,6 +31,7 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     "secret",
     { expiresIn: "8h" }
   );
+
   res.setHeader(
     "Set-Cookie",
     cookie.serialize("TRAX_ACCESS_TOKEN", token, {
