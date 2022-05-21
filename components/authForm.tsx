@@ -5,15 +5,20 @@ import { auth } from "../lib/mutations";
 import { FC, useState } from "react";
 import NextImage from "next/image";
 
-const AuthForm: FC<{ mode: string }> = ({ mode }) => {
+const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
   const [isSignup, setIsSignup] = useState(router.pathname === "/signup");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    await auth(mode, { email, password });
+    setIsLoading(false);
+    router.push("/");
   };
 
   const handleSwitch = () => {
