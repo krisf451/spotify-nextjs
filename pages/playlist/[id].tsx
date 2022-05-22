@@ -1,8 +1,24 @@
+import GradientLayout from "../../components/gradientLayout";
 import { validateToken } from "../../lib/auth";
 import prisma from "../../lib/prisma";
 
+const getBGColor = (id) => {
+  const colors = [
+    "red",
+    "green",
+    "blue",
+    "orange",
+    "purple",
+    "gray",
+    "teal",
+    "yellow",
+  ];
+
+  return colors[id - 1] || colors[Math.floor(Math.random() * colors.length)];
+};
+
 const Playlist = ({ playlist }) => {
-  return <div>{playlist.name}</div>;
+  return <GradientLayout></GradientLayout>;
 };
 
 export const getServerSideProps = async ({ query, req }) => {
