@@ -1,13 +1,11 @@
 import NextImage from "next/image";
 import NextLink from "next/link";
-import { useMe, usePlaylist } from "../lib/hooks";
 import {
   Box,
   List,
   ListItem,
   ListIcon,
   Divider,
-  Center,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/layout";
@@ -18,6 +16,7 @@ import {
   MdPlaylistAdd,
   MdFavorite,
 } from "react-icons/md";
+import { useMe, usePlaylist } from "../lib/hooks";
 
 const navMenu = [
   {
@@ -125,7 +124,13 @@ const Sidebar = () => {
             {playlists.map((playlist) => (
               <ListItem paddingX="20px" key={playlist.id}>
                 <LinkBox>
-                  <NextLink href="/" passHref>
+                  <NextLink
+                    href={{
+                      pathname: "/playlist/[id]",
+                      query: { id: playlist.id },
+                    }}
+                    passHref
+                  >
                     <LinkOverlay>{playlist.name}</LinkOverlay>
                   </NextLink>
                 </LinkBox>
