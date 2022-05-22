@@ -18,7 +18,19 @@ const getBGColor = (id) => {
 };
 
 const Playlist = ({ playlist }) => {
-  return <GradientLayout></GradientLayout>;
+  const color = getBGColor(playlist.id);
+  return (
+    <GradientLayout
+      color={color}
+      title={playlist.name}
+      roundImage={false}
+      subtitle="playlist"
+      description={`${playlist.songs.length} songs`}
+      image={`https://picsum.photos/400?random=${playlist.id}`}
+    >
+      <div>hello</div>
+    </GradientLayout>
+  );
 };
 
 export const getServerSideProps = async ({ query, req }) => {
