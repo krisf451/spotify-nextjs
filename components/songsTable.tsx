@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { BsFillPlayFill, BsThreeDots } from "react-icons/bs";
 import { AiOutlineClockCircle, AiFillHeart } from "react-icons/ai";
+import { formatDate, formatTime } from "../lib/formatters";
 
 const defaultImage =
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-YpFHvvLWH7c%2FUcQFriyLFjI%2FAAAAAAAACgw%2FSNi-PZdRy04%2Fs1600%2FUsher.jpg&f=1&nofb=1";
@@ -58,7 +59,7 @@ const SongTable = ({ songs }) => {
               cursor="pointer"
             >
               <Td>{i}</Td>
-              <Td>
+              <Td position="relative">
                 <Image
                   src={defaultImage}
                   boxSize="40px"
@@ -70,8 +71,8 @@ const SongTable = ({ songs }) => {
                 />
                 {song.name}
               </Td>
-              <Td>{song.createdAt.toString()}</Td>
-              <Td>{song.duration}</Td>
+              <Td>{formatDate(song.createdAt)}</Td>
+              <Td>{formatTime(song.duration)}</Td>
             </Tr>
           ))}
         </Tbody>
