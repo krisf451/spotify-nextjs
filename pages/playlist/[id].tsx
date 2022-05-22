@@ -1,4 +1,3 @@
-import { redirect } from "next/dist/server/api-utils";
 import GradientLayout from "../../components/gradientLayout";
 import SongTable from "../../components/songsTable";
 import { validateToken } from "../../lib/auth";
