@@ -16,7 +16,7 @@ import {
   MdPlaylistAdd,
   MdFavorite,
 } from "react-icons/md";
-import { useMe, usePlaylist } from "../lib/hooks";
+import { usePlaylist } from "../lib/hooks";
 
 const navMenu = [
   {
@@ -121,7 +121,7 @@ const Sidebar = () => {
           }}
         >
           <List spacing={2}>
-            {playlists.map((playlist) => (
+            {playlists?.map((playlist) => (
               <ListItem paddingX="20px" key={playlist.id}>
                 <LinkBox>
                   <NextLink

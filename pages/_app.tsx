@@ -30,7 +30,7 @@ const theme = extendTheme({
   },
 });
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       {Component.authPage ? (
@@ -42,6 +42,6 @@ function MyApp({ Component, pageProps }) {
       )}
     </ChakraProvider>
   );
-}
+};
 
 export default MyApp;
