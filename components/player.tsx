@@ -42,9 +42,9 @@ const Player = ({ songs, activeSong }) => {
 
   return (
     <Box>
-      {/* <Box>
+      <Box>
         <ReactHowler playing={playing} src={activeSong?.url} />
-      </Box> */}
+      </Box>
       <Center color="gray.600">
         <ButtonGroup>
           <IconButton
